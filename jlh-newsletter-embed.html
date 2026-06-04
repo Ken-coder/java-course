@@ -1,0 +1,764 @@
+<!-- =====================================================================
+     JLH LEGACY SPIRITS — BEEHIIV CUSTOM HTML BLOCK
+     Paste this entire block into Beehiiv's "Custom HTML" embed widget.
+     All styles are scoped under #jlh-nl to avoid conflicts.
+     ===================================================================== -->
+
+<style>
+  /* ── Google Fonts ── */
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=Oswald:wght@400;600;700&display=swap');
+
+  /* ── Root tokens ── */
+  #jlh-nl {
+    --amber:    #C8862A;
+    --amber-lt: #E5A94A;
+    --cream:    #F5EDD8;
+    --charcoal: #1A1612;
+    --dark:     #231E18;
+    --mid:      #2E271F;
+    --border:   rgba(200,134,42,0.35);
+    --text:     #D4C4A8;
+    --muted:    #8A7A62;
+    font-family: 'Inter', Georgia, serif;
+    color: var(--text);
+    background: var(--charcoal);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #jlh-nl * { box-sizing: border-box; margin: 0; padding: 0; }
+  #jlh-nl a { color: var(--amber-lt); text-decoration: none; }
+  #jlh-nl a:hover { text-decoration: underline; }
+
+  /* ── Header ── */
+  #jlh-nl .jlh-header {
+    background: linear-gradient(180deg, #0D0A07 0%, var(--charcoal) 100%);
+    padding: 40px 32px 32px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  #jlh-nl .jlh-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(200,134,42,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  #jlh-nl .jlh-logo-wordmark {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  #jlh-nl .jlh-quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    line-height: 0.6;
+    color: var(--amber);
+    opacity: 0.4;
+    display: block;
+    margin-bottom: 8px;
+  }
+  #jlh-nl .jlh-hero-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--cream);
+    line-height: 1.4;
+    max-width: 480px;
+    margin: 0 auto 16px;
+  }
+  #jlh-nl .jlh-attribution {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--amber);
+    text-transform: uppercase;
+  }
+  #jlh-nl .jlh-divider-line {
+    width: 48px;
+    height: 2px;
+    background: var(--amber);
+    margin: 20px auto;
+    opacity: 0.6;
+  }
+
+  /* ── Exclusive Release Banner ── */
+  #jlh-nl .jlh-exclusive-band {
+    background: var(--amber);
+    padding: 6px 32px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--charcoal);
+    text-transform: uppercase;
+  }
+
+  /* ── Hero CTA Section ── */
+  #jlh-nl .jlh-hero-cta {
+    background: linear-gradient(135deg, var(--dark) 0%, #140F09 100%);
+    padding: 48px 32px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  #jlh-nl .jlh-hero-cta h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  #jlh-nl .jlh-hero-cta h1 em {
+    color: var(--amber-lt);
+    font-style: normal;
+  }
+  #jlh-nl .jlh-hero-cta p {
+    font-size: 15px;
+    color: var(--text);
+    max-width: 420px;
+    margin: 0 auto 28px;
+  }
+  #jlh-nl .jlh-btn {
+    display: inline-block;
+    background: var(--amber);
+    color: var(--charcoal);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    text-decoration: none;
+  }
+  #jlh-nl .jlh-btn:hover {
+    background: var(--amber-lt);
+    transform: translateY(-1px);
+    text-decoration: none;
+    color: var(--charcoal);
+  }
+  #jlh-nl .jlh-btn-outline {
+    background: transparent;
+    color: var(--amber);
+    border: 1.5px solid var(--amber);
+    margin-top: 12px;
+  }
+  #jlh-nl .jlh-btn-outline:hover {
+    background: rgba(200,134,42,0.1);
+    color: var(--amber-lt);
+    border-color: var(--amber-lt);
+  }
+
+  /* ── Coupon pill ── */
+  #jlh-nl .jlh-coupon-wrap {
+    margin: 24px auto 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  #jlh-nl .jlh-coupon-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 1.5px dashed var(--amber);
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background 0.2s;
+    position: relative;
+  }
+  #jlh-nl .jlh-coupon-pill:hover { background: rgba(200,134,42,0.08); }
+  #jlh-nl .jlh-coupon-code {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--amber-lt);
+  }
+  #jlh-nl .jlh-coupon-copy {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  #jlh-nl .jlh-coupon-note {
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+  }
+  #jlh-nl .jlh-coupon-note strong { color: var(--amber); }
+  #jlh-nl .jlh-copied-toast {
+    position: absolute;
+    top: -32px; left: 50%; transform: translateX(-50%);
+    background: var(--amber);
+    color: var(--charcoal);
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+  }
+  #jlh-nl .jlh-copied-toast.show { opacity: 1; }
+
+  /* ── Legacy Story Section ── */
+  #jlh-nl .jlh-story {
+    padding: 48px 32px;
+    background: var(--dark);
+    border-bottom: 1px solid var(--border);
+  }
+  #jlh-nl .jlh-section-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  #jlh-nl .jlh-section-label::before,
+  #jlh-nl .jlh-section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  #jlh-nl .jlh-story h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--cream);
+    margin-bottom: 18px;
+    line-height: 1.25;
+  }
+  #jlh-nl .jlh-story p {
+    font-size: 15px;
+    color: var(--text);
+    margin-bottom: 20px;
+    line-height: 1.7;
+  }
+  #jlh-nl .jlh-blockquote {
+    border-left: 3px solid var(--amber);
+    padding: 12px 20px;
+    background: rgba(200,134,42,0.06);
+    margin: 24px 0;
+  }
+  #jlh-nl .jlh-blockquote p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+  #jlh-nl .jlh-blockquote cite {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--amber);
+    font-style: normal;
+    font-family: 'Oswald', sans-serif;
+  }
+
+  /* ── Awards Row ── */
+  #jlh-nl .jlh-awards {
+    background: var(--mid);
+    padding: 36px 32px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+  #jlh-nl .jlh-awards-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  #jlh-nl .jlh-awards-grid {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  #jlh-nl .jlh-award-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 92px;
+  }
+  #jlh-nl .jlh-award-medal {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border: 2px solid;
+    position: relative;
+  }
+  #jlh-nl .jlh-award-medal.gold {
+    background: radial-gradient(circle, #F5C842 0%, #C8862A 60%, #8B5E12 100%);
+    border-color: #C8862A;
+    box-shadow: 0 0 12px rgba(200,134,42,0.4);
+  }
+  #jlh-nl .jlh-award-medal.silver {
+    background: radial-gradient(circle, #E8E8E8 0%, #A0A0A0 60%, #707070 100%);
+    border-color: #A0A0A0;
+    box-shadow: 0 0 10px rgba(160,160,160,0.3);
+  }
+  #jlh-nl .jlh-award-medal.points {
+    background: radial-gradient(circle, #3A2E1C 0%, #1A1612 100%);
+    border-color: var(--amber);
+  }
+  #jlh-nl .jlh-award-medal.points span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--amber-lt);
+  }
+  #jlh-nl .jlh-award-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--cream);
+    text-align: center;
+    line-height: 1.2;
+  }
+  #jlh-nl .jlh-award-org {
+    font-size: 10px;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  /* ── Collection Section ── */
+  #jlh-nl .jlh-collection {
+    padding: 48px 32px;
+    background: var(--charcoal);
+    border-bottom: 1px solid var(--border);
+  }
+  #jlh-nl .jlh-collection-intro {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  #jlh-nl .jlh-collection-intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--cream);
+    margin-bottom: 12px;
+  }
+  #jlh-nl .jlh-collection-intro p {
+    font-size: 14px;
+    color: var(--text);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ── Product Cards ── */
+  #jlh-nl .jlh-product-card {
+    background: var(--dark);
+    border: 1px solid var(--border);
+    padding: 28px 24px;
+    margin-bottom: 20px;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+  #jlh-nl .jlh-product-card:hover { border-color: var(--amber); }
+  #jlh-nl .jlh-product-card:last-of-type { margin-bottom: 0; }
+  #jlh-nl .jlh-product-named {
+    font-family: 'Oswald', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  #jlh-nl .jlh-product-guitar {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  #jlh-nl .jlh-product-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--cream);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  #jlh-nl .jlh-product-spec {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    color: var(--amber);
+    letter-spacing: 0.1em;
+    margin-bottom: 14px;
+  }
+  #jlh-nl .jlh-product-card p {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  #jlh-nl .jlh-card-accent {
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+  }
+  #jlh-nl .jlh-accent-es335  { background: linear-gradient(180deg, #C8862A, #8B5E12); }
+  #jlh-nl .jlh-accent-goldtop { background: linear-gradient(180deg, #D4A017, #C8862A); }
+  #jlh-nl .jlh-accent-zephyr  { background: linear-gradient(180deg, #8B5E12, #4A3010); }
+
+  /* ── Full Collection CTA ── */
+  #jlh-nl .jlh-full-collection {
+    background: linear-gradient(135deg, #140F09 0%, var(--mid) 100%);
+    padding: 48px 32px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  #jlh-nl .jlh-full-collection h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--cream);
+    margin-bottom: 12px;
+  }
+  #jlh-nl .jlh-full-collection p {
+    font-size: 14px;
+    color: var(--text);
+    max-width: 420px;
+    margin: 0 auto 6px;
+  }
+  #jlh-nl .jlh-savings-badge {
+    display: inline-block;
+    background: rgba(200,134,42,0.15);
+    border: 1px solid var(--amber);
+    color: var(--amber-lt);
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 8px 20px;
+    margin: 16px auto;
+  }
+
+  /* ── Personal Note ── */
+  #jlh-nl .jlh-personal-note {
+    padding: 48px 32px;
+    background: var(--dark);
+    border-bottom: 1px solid var(--border);
+  }
+  #jlh-nl .jlh-personal-note h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--cream);
+    margin-bottom: 18px;
+  }
+  #jlh-nl .jlh-personal-note p {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+  #jlh-nl .jlh-signature {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+  #jlh-nl .jlh-sig-name {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 24px;
+    color: var(--amber-lt);
+    margin-bottom: 4px;
+  }
+  #jlh-nl .jlh-sig-title {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── Footer ── */
+  #jlh-nl .jlh-footer {
+    background: #0D0A07;
+    padding: 32px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  #jlh-nl .jlh-social-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  #jlh-nl .jlh-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 16px;
+    transition: border-color 0.2s, color 0.2s;
+    text-decoration: none;
+  }
+  #jlh-nl .jlh-social-link:hover {
+    border-color: var(--amber);
+    color: var(--amber);
+    text-decoration: none;
+  }
+  #jlh-nl .jlh-footer-legal {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  #jlh-nl .jlh-footer-legal a { color: var(--muted); }
+  #jlh-nl .jlh-footer-legal a:hover { color: var(--amber-lt); }
+
+  /* ── Responsive ── */
+  @media (max-width: 480px) {
+    #jlh-nl .jlh-hero-quote { font-size: 18px; }
+    #jlh-nl .jlh-hero-cta h1 { font-size: 26px; }
+    #jlh-nl .jlh-story h2 { font-size: 22px; }
+    #jlh-nl .jlh-collection-intro h2 { font-size: 22px; }
+    #jlh-nl .jlh-awards-grid { gap: 8px; }
+    #jlh-nl .jlh-award-badge { width: 78px; }
+    #jlh-nl .jlh-header,
+    #jlh-nl .jlh-hero-cta,
+    #jlh-nl .jlh-story,
+    #jlh-nl .jlh-awards,
+    #jlh-nl .jlh-collection,
+    #jlh-nl .jlh-full-collection,
+    #jlh-nl .jlh-personal-note,
+    #jlh-nl .jlh-footer { padding-left: 20px; padding-right: 20px; }
+    #jlh-nl .jlh-product-card { padding: 22px 18px; }
+  }
+</style>
+
+<div id="jlh-nl">
+
+  <!-- ── HEADER ── -->
+  <header class="jlh-header">
+    <div class="jlh-logo-wordmark">John Lee Hooker Legacy Spirits</div>
+    <span class="jlh-quote-mark">&ldquo;</span>
+    <p class="jlh-hero-quote">The blues is a healer. It healed me, and it can heal you.</p>
+    <div class="jlh-divider-line"></div>
+    <p class="jlh-attribution">John Lee Hooker &nbsp;·&nbsp; 1917–2001</p>
+  </header>
+
+  <!-- ── EXCLUSIVE RELEASE BAND ── -->
+  <div class="jlh-exclusive-band">&#9670; Exclusive Release &#9670;</div>
+
+  <!-- ── HERO CTA ── -->
+  <section class="jlh-hero-cta">
+    <h1>You've Been With Us<br><em>From the Beginning.</em><br>We Saved Something for You.</h1>
+    <p>A very small, exclusive stash of bottles from the Strings of Legacy: Kentucky Bourbon Collection — set aside specifically for our most dedicated supporters.</p>
+
+    <div class="jlh-coupon-wrap">
+      <div class="jlh-coupon-pill" id="jlh-copy-btn" onclick="jlhCopyCode()" title="Click to copy code">
+        <span class="jlh-coupon-code">LEGACY10</span>
+        <span class="jlh-coupon-copy">Click to copy</span>
+        <span class="jlh-copied-toast" id="jlh-toast">Copied!</span>
+      </div>
+      <p class="jlh-coupon-note">
+        10% off any bottle — as our thanks to this community<br>
+        <strong>Purchase the Full Set and receive 15% off</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- ── LEGACY STORY ── -->
+  <section class="jlh-story">
+    <div class="jlh-section-label">A Legacy That Echoes</div>
+    <h2>From a Record Store in Sweden<br>to the Oscars Stage</h2>
+    <p>At this year's Academy Awards, composer <strong>Ludwig Göransson</strong> accepted his Oscar for the film <em>Sinners</em> and shared a story that stopped the room. His father once bought a John Lee Hooker album in a small Swedish record store. That album became what Göransson called the original spark that led him to pick up a guitar — and eventually become the world-class composer he is today.</p>
+
+    <div class="jlh-blockquote">
+      <p>"My granddaddy's sound didn't just define American music. It's still inspiring the next generation of creators, from Nashville to Stockholm and beyond."</p>
+      <cite>— Glenn Thomas, Grandson of John Lee Hooker</cite>
+    </div>
+  </section>
+
+  <!-- ── AWARDS ── -->
+  <section class="jlh-awards">
+    <div class="jlh-awards-title">Award-Winning Craftsmanship</div>
+    <div class="jlh-awards-grid">
+
+      <div class="jlh-award-badge">
+        <div class="jlh-award-medal gold">&#9733;</div>
+        <div class="jlh-award-label">Gold Medal</div>
+        <div class="jlh-award-org">SIP Awards</div>
+      </div>
+
+      <div class="jlh-award-badge">
+        <div class="jlh-award-medal points"><span>93</span></div>
+        <div class="jlh-award-label">93 Points</div>
+        <div class="jlh-award-org">Bartender Spirits</div>
+      </div>
+
+      <div class="jlh-award-badge">
+        <div class="jlh-award-medal silver">&#9733;</div>
+        <div class="jlh-award-label">Silver Medal</div>
+        <div class="jlh-award-org">SF World Spirits</div>
+      </div>
+
+      <div class="jlh-award-badge">
+        <div class="jlh-award-medal gold">&#9733;</div>
+        <div class="jlh-award-label">Gold Medal</div>
+        <div class="jlh-award-org">American Spirits</div>
+      </div>
+
+      <div class="jlh-award-badge">
+        <div class="jlh-award-medal gold">&#9733;</div>
+        <div class="jlh-award-label">Gold Medal</div>
+        <div class="jlh-award-org">John Barleycorn</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PRODUCT COLLECTION ── -->
+  <section class="jlh-collection">
+    <div class="jlh-collection-intro">
+      <h2>The Strings of Legacy Collection</h2>
+      <p>Where the history of the blues meets Kentucky bourbon craftsmanship. Each 8-year-old, single barrel, cask strength expression was crafted to honor a legendary Gibson guitar that defined John Lee Hooker's revolutionary sound.</p>
+    </div>
+
+    <!-- Card 1: ES-335 -->
+    <div class="jlh-product-card">
+      <div class="jlh-card-accent jlh-accent-es335"></div>
+      <div class="jlh-product-named">Named for the</div>
+      <div class="jlh-product-guitar">Gibson ES-335</div>
+      <h3>The Guitar He Always Came Back To</h3>
+      <div class="jlh-product-spec">8-Year Single Barrel &nbsp;·&nbsp; Cask Strength &nbsp;·&nbsp; Kentucky Straight Bourbon</div>
+      <p>John Lee Hooker loved experimenting with different sounds, but his heart always returned to the ES-335 and its true, pure, heartfelt blues. This bourbon embodies that same homecoming — warm and familiar on the approach, with an electrifying complexity that unfolds slowly, like a twelve-bar verse you never want to end.</p>
+      <a href="#" class="jlh-btn">Buy Now</a>
+    </div>
+
+    <!-- Card 2: Les Paul Goldtop -->
+    <div class="jlh-product-card">
+      <div class="jlh-card-accent jlh-accent-goldtop"></div>
+      <div class="jlh-product-named">Named for the</div>
+      <div class="jlh-product-guitar">Gibson Les Paul Goldtop</div>
+      <h3>Loud, Bold, and Unapologetic</h3>
+      <div class="jlh-product-spec">8-Year Single Barrel &nbsp;·&nbsp; Cask Strength &nbsp;·&nbsp; Kentucky Straight Bourbon</div>
+      <p>The Goldtop had an edgier, louder tone that could electrify a room the moment the first note hit. This expression captures that same commanding presence — a bourbon with fierce conviction and unwavering intensity, bottled at cask strength for those who want their whiskey the way John Lee played his music: raw, powerful, and impossible to ignore.</p>
+      <a href="#" class="jlh-btn">Buy Now</a>
+    </div>
+
+    <!-- Card 3: Epiphone Zephyr -->
+    <div class="jlh-product-card">
+      <div class="jlh-card-accent jlh-accent-zephyr"></div>
+      <div class="jlh-product-named">Named for the</div>
+      <div class="jlh-product-guitar">Epiphone Zephyr</div>
+      <h3>Where the Legend Began</h3>
+      <div class="jlh-product-spec">8-Year Single Barrel &nbsp;·&nbsp; Cask Strength &nbsp;·&nbsp; Kentucky Straight Bourbon</div>
+      <p>The Zephyr was the bedrock — the archtop guitar John Lee Hooker used to bend notes that only he could. This bourbon pays homage to those earliest days: the raw talent, the blood, sweat, and tears that launched the story. It's a taste of family history and the passion that built an entire chapter of American music.</p>
+      <a href="#" class="jlh-btn">Buy Now</a>
+    </div>
+  </section>
+
+  <!-- ── FULL COLLECTION CTA ── -->
+  <section class="jlh-full-collection">
+    <h2>Own the Complete Collection</h2>
+    <p>These spirits are more than bourbon — they are history you can taste. Because this is a limited release collectible series, these bottles will not last long.</p>
+    <div class="jlh-savings-badge">Save 15% on the Full Strings of Legacy Set</div>
+    <p>Use code <strong style="color:var(--amber-lt);letter-spacing:0.12em;">LEGACY10</strong> at checkout</p>
+    <br>
+    <a href="#" class="jlh-btn">Shop the Full Collection</a>
+  </section>
+
+  <!-- ── PERSONAL NOTE ── -->
+  <section class="jlh-personal-note">
+    <div class="jlh-section-label">A Personal Note</div>
+    <p>I want to take a moment to personally thank every one of you for your incredible support. Building John Lee Hooker Legacy Spirits is about more than just bourbon — it's about preserving a family legacy and sharing the soulful story of my granddaddy with fans around the world.</p>
+    <p>We couldn't do this without this community.</p>
+    <div class="jlh-signature">
+      <p class="jlh-sig-name">With gratitude, Glenn Thomas</p>
+      <p class="jlh-sig-title">Founder, John Lee Hooker Legacy Spirits</p>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="jlh-footer">
+    <div class="jlh-social-row">
+      <a href="#" class="jlh-social-link" aria-label="Facebook">
+        <!-- Facebook icon -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+        </svg>
+      </a>
+      <a href="#" class="jlh-social-link" aria-label="Twitter / X">
+        <!-- X icon -->
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+      <a href="#" class="jlh-social-link" aria-label="Instagram">
+        <!-- Instagram icon -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+    </div>
+    <div class="jlh-footer-legal">
+      You are receiving this email because you signed up for our newsletters.<br>
+      Want to change how you receive these emails?<br>
+      <a href="#">Unsubscribe</a> or <a href="#">Update your preferences</a><br><br>
+      &copy; 2026 John Lee Hooker Legacy Spirits. All rights reserved.
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function() {
+  function jlhCopyCode() {
+    var code = 'LEGACY10';
+    var toast = document.getElementById('jlh-toast');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(code).then(function() { jlhShowToast(toast); });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = code;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      jlhShowToast(toast);
+    }
+  }
+  function jlhShowToast(toast) {
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 1800);
+  }
+  window.jlhCopyCode = jlhCopyCode;
+})();
+</script>
